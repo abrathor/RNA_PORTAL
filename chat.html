@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container {
+  width: 400px;
+  margin: 0 auto;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.chat-container {
+  height: 400px;
+  overflow: auto;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  direction: rtl;
+}
+.chat-container .message {
+  border-bottom: solid 1px #ccc;
+  padding: 20px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  direction: ltr;
+}
+.chat-container .message .avatar {
+  float: left;
+  margin-right: 5px;
+}
+.chat-container .message .datetime {
+  float: right;
+  color: #999;
+}
+.send-message-form input {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+}
+.send-message-form button {
+  display: none;
+}
+
+         
+</style>
+
+<style>
+$(function () {
+  $('form').on('submit', function (event) {
+    event.preventDefault();
+    var message = $('.message').first().clone();
+    message.find('p').text($('input').val());
+    message.prependTo('.chat-container');
+    $('input').val('');
+  });
+});
+</style>
+</head>
+
+<body>
+<div class="container">
+  <div class="chat-container">
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?1">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?2">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?3">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?4">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?5">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?6">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?7">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?8">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?9">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+    <div class="message">
+      <img class="avatar" src="http://lorempixum.com/50/50?10">
+      <div class="datetime">23/03/2016 20:40</div>
+      <p>A message text</p>
+    </div>
+  </div>
+  <form class="send-message-form">
+    
+    <input type="text" placeholder="Your message">
+    <button type="submit">Send</button>
+  </form>
+</div>
+</body>
+</html>
+
